@@ -6,7 +6,7 @@
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:38:56 by feandrad          #+#    #+#             */
-/*   Updated: 2022/12/06 22:46:32 by feandrad         ###   ########.fr       */
+/*   Updated: 2022/12/07 20:45:35 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,17 @@ int ft_printf(char *str, ...)
 int	check_flag(char flag, va_list arg)
 {
 	if (flag == 'c')
-		return (ft_putchar(va_arg(arg, int)));
+		return (ft_putchar_fd(va_arg(arg, int), 1));
 	else if (flag == 's')
-		return (ft_putstr(va_arg(arg, char *)));
+		return (ft_putstr_fd(va_arg(arg, char *), 1));
 	else if (flag == 'd' || flag == 'i')
-		return (ft_itoa(va_arg(arg, int)));
+		return (ft_putstr_fd(ft_itoa(va_arg(arg, int)), 1);
+    else if (flag == 'u')
+        return (ft_putstr_fd(ft_utoa(va_arg(arg, int))), 1);
+    else if (flag == 'x' || flag == 'X')
+        return (ft_putstr_fd(ft_hextoa(va_arg(arg, int))), 1);
+    else if (flag == 'p')
+        return (search)
     else
         return (ft_putchar(flag));
 }
