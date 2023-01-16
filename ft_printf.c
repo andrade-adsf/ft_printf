@@ -6,7 +6,7 @@
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:38:56 by feandrad          #+#    #+#             */
-/*   Updated: 2023/01/16 19:31:25 by feandrad         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:05:41 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	check_flag(char flag, va_list arg)
     else if (flag == 'u')
         return (ft_putstr_fd(ft_utoa(va_arg(arg, int)), 1));
     else if (flag == 'x' || flag == 'X')
-        return (ft_putstr_fd(ft_hextoa(va_arg(arg, int)), 1));
+        return (ft_putstr_fd(ft_hextoa(va_arg(arg, int), flag), 1));
     else if (flag == 'p')
         return (ft_putstr_fd(ft_pointera(arg), 1));
     else
