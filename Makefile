@@ -1,11 +1,25 @@
+NAME = libftprintf.a
+FLAGS = -Wall -Wextra -Werror
+REMOVE = rm -rf
 
+SRCS = ft_printf.c
 
+OBJS = $(SRCS:.c=.o)
 
-all:
-	todas as compilações
-
-re:
-
+all: $(NAME)
 
 clean:
-	rm ./bin/* ./obj/*
+	$(REMOVE) $(OBJS)
+
+fclean: clean
+	$(REMOVE) $(NAME) 
+
+re: fclean all
+
+%.o: %.c
+		gcc -c $(FLAGS) -I ./libft $< -o $@
+
+$(NAME): $(OBJS)
+		cp libft/libft.a $@
+		ar -rcs $(NAME) $^ 
+.PHONY: all
