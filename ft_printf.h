@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include "libft.h"
 
-int	ft_printf(char *str, ...);
+int	ft_printf(const char *str, ...);
 int	check_flag(char flag, va_list arg);
 
 #endif

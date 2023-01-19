@@ -22,4 +22,5 @@ re: fclean all
 $(NAME): $(OBJS)
 		cp libft/libft.a $@
 		ar -rcs $(NAME) $^ 
+		
 .PHONY: all

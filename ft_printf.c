@@ -6,13 +6,13 @@
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:38:56 by feandrad          #+#    #+#             */
-/*   Updated: 2023/01/19 01:25:53 by feandrad         ###   ########.fr       */
+/*   Updated: 2023/01/19 09:02:13 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	int		count;
 	int		i;
