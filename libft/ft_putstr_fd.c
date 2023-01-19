@@ -6,7 +6,7 @@
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:08:07 by feandrad          #+#    #+#             */
-/*   Updated: 2023/01/19 00:58:28 by feandrad         ###   ########.fr       */
+/*   Updated: 2023/01/19 09:29:50 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	ft_putstr_fd(char *s, int fd)
 		str_size += ft_putchar_fd(s[i], fd);
 		i++;
 	}
+	free(s);
 	return (str_size);
 }
