@@ -1,26 +1,32 @@
 NAME = libftprintf.a
-FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -Wall -Wextra -Werror
 REMOVE = rm -rf
+LIBFT = ./libft/libft.a
 
 SRCS = ft_printf.c
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+all: libft $(NAME)
 
 clean:
 	$(REMOVE) $(OBJS)
+	make clean -C ./libft
 
 fclean: clean
-	$(REMOVE) $(NAME) 
+	$(REMOVE) $(NAME)
+	make fclean -C ./libft
 
 re: fclean all
+
+libft:
+	make -C ./libft
 
 %.o: %.c
 		gcc -c $(FLAGS) -I ./libft $< -o $@
 
-$(NAME): $(OBJS)
-		cp libft/libft.a $@
+$(NAME): $(LIBFT) $(OBJS)
+		cp $(LIBFT) $@
 		ar -rcs $(NAME) $^ 
 		
-.PHONY: all
+.PHONY: libft all
