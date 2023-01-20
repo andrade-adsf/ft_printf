@@ -59,7 +59,7 @@ int		ft_putstr_fd(char *s, int fd);
 
 //Extra
 char	*ft_utoa(unsigned int n);
-char	*ft_hextoa(unsigned int nbr, int flag);
+char	*ft_hextoa(unsigned long nbr, int flag);
 char	*ft_pointera(unsigned long int arg);
 
 #endif

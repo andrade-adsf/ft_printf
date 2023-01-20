@@ -20,12 +20,14 @@ int	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	str_size = 0;
 	if (!s)
-		return (0);
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (s[i] != '\0')
 	{
 		str_size += ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	free(s);
 	return (str_size);
 }

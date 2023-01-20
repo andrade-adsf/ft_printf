@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g3
 REMOVE = rm -rf
 
 SRCS = ft_printf.c

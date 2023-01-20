@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static size_t	intlen(unsigned int nb);
+static size_t	intlen(unsigned long nb);
 
-char	*ft_pointera(unsigned long int nbr)
+char	*ft_pointera(unsigned long nbr)
 {
 	char	*psign;
 	char	*hex;
@@ -22,28 +22,29 @@ char	*ft_pointera(unsigned long int nbr)
 	int		size;
 
 	if (nbr == 0)
-		return ("(nil)");
+		return (ft_strdup("(nil)"));
 	else
 	{
-		psign = (char *)malloc(2);
 		size = 3 + intlen(nbr);
-		result = (char *)malloc(size);
+		//psign = (char *)malloc(2);
+		result = (char *)ft_calloc(size, 1);
 		psign = "0x";
 		hex = ft_hextoa(nbr, 'x');
 		ft_strlcat(result, psign, size);
 		ft_strlcat(result, hex, size);
+		free(hex);
 		return (result);
 	}
 }
 
-static size_t	intlen(unsigned int nb)
+static size_t	intlen(unsigned long nb)
 {
 	size_t	count;
 
 	count = 1;
-	while (nb > 9)
+	while (nb > 15)
 	{
-		nb /= 10;
+		nb /= 16;
 		count++;
 	}
 	return (count);
